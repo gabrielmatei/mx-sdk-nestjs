@@ -1,0 +1,2082 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  Array</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>packages/common/src/utils/extensions/array.extensions.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Methods</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#distinct" 
+>
+                                        distinct
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#except" 
+>
+                                        except
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#first" 
+>
+                                        first
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#firstOrUndefined" 
+>
+                                        firstOrUndefined
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#groupBy" 
+>
+                                        groupBy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#last" 
+>
+                                        last
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#lastOrUndefined" 
+>
+                                        lastOrUndefined
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#mapIndexed" 
+>
+                                        mapIndexed
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#remove" 
+>
+                                        remove
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#selectMany" 
+>
+                                        selectMany
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#shuffle" 
+>
+                                        shuffle
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#single" 
+>
+                                        single
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#singleOrUndefined" 
+>
+                                        singleOrUndefined
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sorted" 
+>
+                                        sorted
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sortedDescending" 
+>
+                                        sortedDescending
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sum" 
+>
+                                        sum
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sumBigInt" 
+>
+                                        sumBigInt
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#toRecord" 
+>
+                                        toRecord
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#toRecordAsync" 
+>
+                                        toRecordAsync
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#zip" 
+>
+                                        zip
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="distinct"></a>
+                    <span class="name">
+                        <span ><b>distinct</b></span>
+                        <a href="#distinct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>distinct(predicate?: (element?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="330"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:330</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TResult</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="except"></a>
+                    <span class="name">
+                        <span ><b>except</b></span>
+                        <a href="#except"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>except(second: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="329"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:329</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>second</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="first"></a>
+                    <span class="name">
+                        <span ><b>first</b></span>
+                        <a href="#first"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>first(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="321"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:321</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="firstOrUndefined"></a>
+                    <span class="name">
+                        <span ><b>firstOrUndefined</b></span>
+                        <a href="#firstOrUndefined"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>firstOrUndefined(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="323"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:323</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupBy"></a>
+                    <span class="name">
+                        <span ><b>groupBy</b></span>
+                        <a href="#groupBy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>groupBy(predicate: (item: T) => void, asArray?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="319"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:319</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>asArray</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="last"></a>
+                    <span class="name">
+                        <span ><b>last</b></span>
+                        <a href="#last"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>last(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="324"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:324</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastOrUndefined"></a>
+                    <span class="name">
+                        <span ><b>lastOrUndefined</b></span>
+                        <a href="#lastOrUndefined"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>lastOrUndefined(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="325"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:325</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapIndexed"></a>
+                    <span class="name">
+                        <span ><b>mapIndexed</b></span>
+                        <a href="#mapIndexed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapIndexed(items: TOUT[], predicate: (item: TOUT) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="322"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:322</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TOUT</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>items</td>
+                                    <td>
+                                            <code>TOUT[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remove(element: T)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="337"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:337</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                            <code>T</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectMany"></a>
+                    <span class="name">
+                        <span ><b>selectMany</b></span>
+                        <a href="#selectMany"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectMany(predicate: (item: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="320"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:320</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TOUT</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>TOUT[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="shuffle"></a>
+                    <span class="name">
+                        <span ><b>shuffle</b></span>
+                        <a href="#shuffle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>shuffle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="338"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:338</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T[]</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="single"></a>
+                    <span class="name">
+                        <span ><b>single</b></span>
+                        <a href="#single"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>single(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:326</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="singleOrUndefined"></a>
+                    <span class="name">
+                        <span ><b>singleOrUndefined</b></span>
+                        <a href="#singleOrUndefined"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>singleOrUndefined(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="327"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:327</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sorted"></a>
+                    <span class="name">
+                        <span ><b>sorted</b></span>
+                        <a href="#sorted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sorted(...predicates: (function)[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:331</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicates</td>
+                                    <td>
+                                            <code>(function)[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortedDescending"></a>
+                    <span class="name">
+                        <span ><b>sortedDescending</b></span>
+                        <a href="#sortedDescending"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortedDescending(...predicates: (function)[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="332"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:332</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicates</td>
+                                    <td>
+                                            <code>(function)[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>T[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sum"></a>
+                    <span class="name">
+                        <span ><b>sum</b></span>
+                        <a href="#sum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sum(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="333"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:333</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sumBigInt"></a>
+                    <span class="name">
+                        <span ><b>sumBigInt</b></span>
+                        <a href="#sumBigInt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sumBigInt(predicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="334"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:334</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toRecord"></a>
+                    <span class="name">
+                        <span ><b>toRecord</b></span>
+                        <a href="#toRecord"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toRecord(keyPredicate: (item: T) => void, valuePredicate?: (item?: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="335"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:335</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TOUT</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>keyPredicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>valuePredicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Record&lt;string, TOUT&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toRecordAsync"></a>
+                    <span class="name">
+                        <span ><b>toRecordAsync</b></span>
+                        <a href="#toRecordAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toRecordAsync(keyPredicate: (item: T) => void, valuePredicate: (item: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="336"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:336</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TOUT</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>keyPredicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>valuePredicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;Record&lt;string, TOUT&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zip"></a>
+                    <span class="name">
+                        <span ><b>zip</b></span>
+                        <a href="#zip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>zip(second: TSecond[], predicate: (first: T,second: TSecond) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="328"
+                            class="link-to-prism">packages/common/src/utils/extensions/array.extensions.ts:328</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>TSecond</li>
+                        <li>TResult</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>second</td>
+                                    <td>
+                                            <code>TSecond[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>TResult[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">Array.prototype.groupBy &#x3D; function (predicate: Function, asArray &#x3D; false) {
+  let result &#x3D; this.reduce(function (rv, x) {
+    (rv[predicate(x)] &#x3D; rv[predicate(x)] || []).push(x);
+    return rv;
+  }, {});
+
+  if (asArray &#x3D;&#x3D;&#x3D; true) {
+    result &#x3D; Object.keys(result).map(key &#x3D;&gt; {
+      return {
+        key: key,
+        values: result[key],
+      };
+    });
+  }
+
+  return result;
+};
+
+Array.prototype.selectMany &#x3D; function (predicate: Function) {
+  const result &#x3D; [];
+
+  for (const item of this) {
+    result.push(...predicate(item));
+  }
+
+  return result;
+};
+
+Array.prototype.firstOrUndefined &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    return undefined;
+  }
+
+  if (!predicate) {
+    return this[0];
+  }
+
+  for (const item of this) {
+    const result &#x3D; predicate(item);
+    if (result) {
+      return item;
+    }
+  }
+
+  return undefined;
+};
+
+Array.prototype.first &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    throw new Error(&#x27;Sequence contains no elements&#x27;);
+  }
+
+  if (!predicate) {
+    return this[0];
+  }
+
+  for (const item of this) {
+    if (predicate(item)) {
+      return item;
+    }
+  }
+
+  throw new Error(&#x27;Sequence contains no elements&#x27;);
+};
+
+Array.prototype.mapIndexed &#x3D; function &lt;TOUT&gt;(items: TOUT[], predicate: Function): (TOUT | undefined)[] {
+  const records &#x3D; items.toRecord&lt;TOUT&gt;(item &#x3D;&gt; predicate(item));
+
+  return this.map(item &#x3D;&gt; records[item]);
+};
+
+Array.prototype.lastOrUndefined &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    return undefined;
+  }
+
+  if (!predicate) {
+    return this[this.length - 1];
+  }
+
+  let lastItem &#x3D; undefined;
+  for (const item of this) {
+    if (predicate(item)) {
+      lastItem &#x3D; item;
+    }
+  }
+
+  return lastItem;
+};
+
+Array.prototype.single &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    throw new Error(&#x27;Invalid sequence size&#x27;);
+  }
+
+  if (predicate) {
+    let count &#x3D; 0;
+    let singleItem &#x3D; undefined;
+    for (const item of this) {
+      if (predicate(item)) {
+        count++;
+        singleItem &#x3D; item;
+
+        if (count &gt; 1) {
+          throw new Error(&#x27;Invalid sequence size&#x27;);
+        }
+      }
+    }
+
+    if (singleItem &#x3D;&#x3D;&#x3D; undefined) {
+      throw new Error(&#x27;Invalid sequence size&#x27;);
+    }
+
+    return singleItem;
+  }
+
+  if (this.length &gt; 1) {
+    throw new Error(&#x27;Invalid sequence size&#x27;);
+  }
+
+  return this[0];
+};
+
+Array.prototype.singleOrUndefined &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    return undefined;
+  }
+
+  if (predicate) {
+    let count &#x3D; 0;
+    let singleItem &#x3D; undefined;
+    for (const item of this) {
+      if (predicate(item)) {
+        count++;
+        singleItem &#x3D; item;
+
+        if (count &gt; 1) {
+          return undefined;
+        }
+      }
+    }
+
+    return singleItem;
+  }
+
+  if (this.length &gt; 1) {
+    return undefined;
+  }
+
+  return this[0];
+};
+
+Array.prototype.last &#x3D; function (predicate?: Function) {
+  if (this.length &#x3D;&#x3D;&#x3D; 0) {
+    throw new Error(&#x27;Sequence contains no elements&#x27;);
+  }
+
+  if (!predicate) {
+    return this[this.length - 1];
+  }
+
+  let lastItem &#x3D; undefined;
+  let found &#x3D; false;
+  for (const item of this) {
+    if (predicate(item)) {
+      lastItem &#x3D; item;
+      found &#x3D; true;
+    }
+  }
+
+  if (!found) {
+    throw new Error(&#x27;Sequence contains no elements&#x27;);
+  }
+
+  return lastItem;
+};
+
+Array.prototype.zip &#x3D; function &lt;TSecond, TResult&gt;(second: TSecond[], predicate: Function): TResult[] {
+  return this.map((element: any, index: number) &#x3D;&gt; predicate(element, second[index]));
+};
+
+Array.prototype.remove &#x3D; function &lt;T&gt;(element: T): number {
+  const index &#x3D; this.indexOf(element);
+  if (index &gt;&#x3D; 0) {
+    this.splice(index, 1);
+  }
+
+  return index;
+};
+
+Array.prototype.except &#x3D; function &lt;T&gt;(second: T[]) {
+  const missing: T[] &#x3D; [];
+  for (const item of this) {
+    if (!second.includes(item)) {
+      missing.push(item);
+    }
+  }
+
+  return missing;
+};
+
+Array.prototype.distinct &#x3D; function &lt;TCollection, TResult&gt;(predicate?: (element: TCollection) &#x3D;&gt; TResult): TCollection[] {
+  if (!predicate) {
+    return [...new Set(this)];
+  }
+
+  const distinctProjections: TResult[] &#x3D; [];
+  const result: TCollection[] &#x3D; [];
+
+  for (const element of this) {
+    const projection &#x3D; predicate(element);
+    if (!distinctProjections.includes(projection)) {
+      distinctProjections.push(projection);
+      result.push(element);
+    }
+  }
+
+  return result;
+};
+
+Array.prototype.toRecord &#x3D; function &lt;TIN, TOUT&gt;(keyPredicate: (item: TIN) &#x3D;&gt; string, valuePredicate?: (item: TIN) &#x3D;&gt; TOUT): Record&lt;string, TOUT&gt; {
+  const result: Record&lt;string, TOUT&gt; &#x3D; {};
+
+  for (const item of this) {
+    result[keyPredicate(item)] &#x3D; valuePredicate ? valuePredicate(item) : item;
+  }
+
+  return result;
+};
+
+Array.prototype.toRecordAsync &#x3D; async function &lt;TIN, TOUT&gt;(keyPredicate: (item: TIN) &#x3D;&gt; string, valuePredicate: (item: TIN) &#x3D;&gt; Promise&lt;TOUT&gt;): Promise&lt;Record&lt;string, TOUT&gt;&gt; {
+  const result: Record&lt;string, TOUT&gt; &#x3D; {};
+
+  const values &#x3D; await Promise.all(this.map(x &#x3D;&gt; valuePredicate(x)));
+
+  for (const [index, item] of this.entries()) {
+    result[keyPredicate(item)] &#x3D; values[index];
+  }
+
+  return result;
+};
+
+Array.prototype.sorted &#x3D; function &lt;T&gt;(...predicates: ((item: T) &#x3D;&gt; number)[]): T[] {
+  const cloned &#x3D; [...this];
+
+  if (predicates.length &gt; 0) {
+    cloned.sort((a, b) &#x3D;&gt; {
+      for (const predicate of predicates) {
+        const result &#x3D; predicate(a) - predicate(b);
+        if (Math.abs(result) &lt;&#x3D; 0.0000000000001) {
+          continue;
+        }
+
+        return result;
+      }
+
+      return 0;
+    });
+  } else {
+    cloned.sort((a, b) &#x3D;&gt; a - b);
+  }
+
+  return cloned;
+};
+
+Array.prototype.sortedDescending &#x3D; function &lt;T&gt;(...predicates: ((item: T) &#x3D;&gt; number)[]): T[] {
+  const sorted &#x3D; this.sorted(...predicates);
+
+  sorted.reverse();
+
+  return sorted;
+};
+
+Array.prototype.sum &#x3D; function &lt;T&gt;(predicate?: (item: T) &#x3D;&gt; number): number {
+  if (predicate) {
+    return this.map(predicate).reduce((a, b) &#x3D;&gt; a + b);
+  }
+
+  return this.reduce((a, b) &#x3D;&gt; a + b);
+};
+
+Array.prototype.sumBigInt &#x3D; function &lt;T&gt;(predicate?: (item: T) &#x3D;&gt; bigint): bigint {
+  if (predicate) {
+    return this.map(predicate).reduce((a, b) &#x3D;&gt; BigInt(a) + BigInt(b), BigInt(0));
+  }
+
+  return this.reduce((a, b) &#x3D;&gt; BigInt(a) + BigInt(b), BigInt(0));
+};
+
+Array.prototype.remove &#x3D; function &lt;T&gt;(element: T): void {
+  let index &#x3D; this.indexOf(element);
+  while (index &gt;&#x3D; 0) {
+    this.splice(index, 1);
+
+    index &#x3D; this.indexOf(element);
+  }
+};
+
+Array.prototype.shuffle &#x3D; function &lt;T&gt;(): T[] {
+  let currentIndex &#x3D; this.length, randomIndex;
+  const array &#x3D; [...this];
+
+  // While there remain elements to shuffle.
+  while (currentIndex !&#x3D; 0) {
+
+    // Pick a remaining element.
+    randomIndex &#x3D; Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] &#x3D; [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+};
+
+declare interface Array&lt;T&gt; {
+  groupBy(predicate: (item: T) &#x3D;&gt; any, asArray? :boolean): any;
+  selectMany&lt;TOUT&gt;(predicate: (item: T) &#x3D;&gt; TOUT[]): TOUT[];
+  first(predicate?: (item: T) &#x3D;&gt; boolean): T | undefined;
+  mapIndexed&lt;TOUT&gt;(items: TOUT[], predicate: (item: TOUT) &#x3D;&gt; T): (TOUT | undefined)[];
+  firstOrUndefined(predicate?: (item: T) &#x3D;&gt; boolean): T | undefined;
+  last(predicate?: (item: T) &#x3D;&gt; boolean): T
+  lastOrUndefined(predicate?: (item: T) &#x3D;&gt; boolean): T | undefined;
+  single(predicate?: (item: T) &#x3D;&gt; boolean): T | undefined;
+  singleOrUndefined(predicate?: (item: T) &#x3D;&gt; boolean): T | undefined;
+  zip&lt;TSecond, TResult&gt;(second: TSecond[], predicate: (first: T, second: TSecond) &#x3D;&gt; TResult): TResult[];
+  except(second: T[]): T[];
+  distinct&lt;TResult&gt;(predicate?: (element: T) &#x3D;&gt; TResult): T[];
+  sorted(...predicates: ((item: T) &#x3D;&gt; number)[]): T[];
+  sortedDescending(...predicates: ((item: T) &#x3D;&gt; number)[]): T[];
+  sum(predicate?: (item: T) &#x3D;&gt; number): number;
+  sumBigInt(predicate?: (item: T) &#x3D;&gt; bigint): bigint;
+  toRecord&lt;TOUT&gt;(keyPredicate: (item: T) &#x3D;&gt; string, valuePredicate?: (item: T) &#x3D;&gt; TOUT): Record&lt;string, TOUT&gt;;
+  toRecordAsync&lt;TOUT&gt;(keyPredicate: (item: T) &#x3D;&gt; string, valuePredicate: (item: T) &#x3D;&gt; Promise&lt;TOUT&gt;): Promise&lt;Record&lt;string, TOUT&gt;&gt;;
+  remove(element: T): void;
+  shuffle(): T[];
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Array.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

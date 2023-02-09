@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">Application documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="multiversx-nestjs-microservice-utilities">MultiversX NestJS Microservice Utilities</h1>
+<p>This package contains a set of utilities commonly used in the MultiversX Microservice ecosystem.</p>
+<p>It relies on the following peer dependencies which must be installed in the parent package:</p>
+<ul>
+<li>@multiversx/sdk-core</li>
+<li>@multiversx/sdk-wallet</li>
+<li>@nestjs/common</li>
+<li>@nestjs/swagger</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="https://docs.multiversx.com/sdk-and-tools/erdnest/">Multiversx Docs</a></li>
+</ul>
+<h2 id="changelog">CHANGELOG</h2>
+<p><a href="CHANGELOG.md">CHANGELOG</a></p>
+<h2 id="distribution">Distribution</h2>
+<p><a href="https://socket.dev/npm/package/@multiversx/sdk-nestjs">npm</a></p>
+<h2 id="installation">Installation</h2>
+<p><code>sdk-nestjs</code> is delivered via <strong>npm</strong> and it can be installed as follows:</p>
+<div><pre class="line-numbers"><code class="language-none">npm install &#64;multiversx/sdk-nestjs</code></pre></div><h2 id="code-examples">Code examples</h2>
+<p>In this section we will provide some code examples of how these packages can be used in your microservice.</p>
+<p>These examples requires basic knowledge of NestJS framework, if you are not familiar with some of the key concepts like (Modules, Providers, Guards, Incerceptors, etc.) please make sure to check their documentation before proceeding with these examples. <a href="https://docs.nestjs.com/#introduction">NestJS Docs</a></p>
+<p>As a rule of thumb, we recommend to import these modules everytime you use them, do not try to import them just once in the application root module.</p>
+<p>Also, if you discover a feature that is missing and might be useful, we would appreciate if you open a PR to integrate it.</p>
+<h3 id="caching">Caching</h3>
+<p>Caching is one of the most important components when talking about high scalable applications that needs to serve thousands of requests per second.
+<code>sdk-nestjs</code> uses both remote (redis) and local (in-memory) cache.</p>
+<h4 id="import">Import</h4>
+<p>In your module:</p>
+<div><pre class="line-numbers"><code class="language-none">&#64;Module({
+  imports: [
+    CachingModule.forRootAsync({
+      imports: [ApiConfigModule],
+      useFactory: (apiConfigService: ApiConfigService) =&gt; new CachingModuleOptions({
+        url: apiConfigService.getRedisUrl(),
+        poolLimit: apiConfigService.getPoolLimit(),
+        processTtl: apiConfigService.getProcessTtl(),
+      }),
+      inject: [ApiConfigService],
+    });
+  ],
+  providers: [FeatureService]
+})
+export class FeatureModule{}</code></pre></div><p>In your provider:</p>
+<div><pre class="line-numbers"><code class="language-none">import { CachingService } from &quot;&#64;multiversx/sdk-nestjs&quot;;
+
+&#64;Injectable()
+export class FeatureService {
+  constructor(
+    private readonly cachingService: CachingService,
+  ) { }</code></pre></div><h4 id="features">Features</h4>
+<p><code>getCache</code></p>
+<p>Returns a Promise with the value stored in cache at a specific key or undefined if key isn&#39;t in cache.
+It searches the key first in local and then in remote cache.</p>
+<div><pre class="line-numbers"><code class="language-none">const value = await this.cachingService.getCache&lt;ExpectedType&gt;(key);</code></pre></div><p><code>setCache</code></p>
+<p>Set both local and remote cache keys with the value you provided. It also accepts a ttl value which represents the persistence time in seconds, if no value is provided it will use default ttl of 6 seconds.</p>
+<div><pre class="line-numbers"><code class="language-none">await this.cachingService.setCache(key, value, ttl);</code></pre></div><p><code>getOrSetCache</code></p>
+<p>Returns a Promise with the value stored in cache at a specific key or set that key with the value you provided.
+If you don&#39;t provide a remote ttl, it will use the default value of 6 seconds.
+If you don&#39;t provide a local ttl, it will use half of the remote ttl value.
+It also accepts a forceRefresh (boolean) parameter for situations you explicitly need to update the cache.</p>
+<div><pre class="line-numbers"><code class="language-none">const value = await this.cachingService.getOrSetCache(
+      key,
+      async () =&gt; await rawValue,
+      remoteCacheTtl,
+      localCacheTtl
+    );</code></pre></div><p>These are the most used features of the CachingModule, there are some more advanced features related to batch processing.
+If you need something else please make sure to check our <a href="packages/common/src/common/caching/caching.service.ts">CachingService</a>.</p>
+<h3 id="smart-contract-interactions">Smart Contract Interactions</h3>
+<p>This package is for dApps that interacts with smart contracts</p>
+<h4 id="contract-loader">Contract Loader</h4>
+<p>Uses Singleton pattern and load a <a href="https://github.com/multiversx/mx-sdk-erdjs/blob/main/src/smartcontracts/smartContract.ts">SmartContract</a> from an abi path.
+You can also load multiple contracts with same abi.</p>
+<div><pre class="line-numbers"><code class="language-none">const cLoader = new ContractLoader(ABI_PATH, CONTRACT_INTERFACE);
+
+const sc = await cLoader.getContract(CONTRACT_ADDRESS);</code></pre></div><h4 id="contract-query-runner">Contract Query Runner</h4>
+<p>Execute contract queries using a multiversx proxy provider (api/gateway).</p>
+<div><pre class="line-numbers"><code class="language-none">const cRunner = new ContractQueryRunner(new ApiNetworkProvider(this.apiConfigService.getApiUrl()));
+
+const contract = await this.contractLoader.getContract(CONTRACT_ADDRESS);
+
+const interaction: Interaction = contract.methodsExplicit.getTotalLockedAssetSupply([]);
+
+const queryResponse = await cRunner.runQuery(contract, interaction);</code></pre></div><h4 id="contract-transaction-generator">Contract Transaction Generator</h4>
+<p>Create transactions from smart contract interactions using and multiversx proxy provider (api/gateway).</p>
+<div><pre class="line-numbers"><code class="language-none">const txGenerator = new ContractTransactionGenerator(provider);
+
+const tx = await this.transactionGenerator.createTransaction(interaction, signer.getAddress());</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
