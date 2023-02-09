@@ -36,7 +36,8 @@
   "include": [
     "src",
     "test",
-    "config"
+    "config",
+    "**/*.ts",
   ],
   "exclude": [
     "node_modules",
